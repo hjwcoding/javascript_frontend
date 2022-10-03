@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .tag {
+
+        display: inline-block;
+
+        width: 1000px;
+
+        background-color: thistle;
+
+        padding: 16px;
+
+        margin: 16px;
+
+        font-size: 48px;
+
+        vertical-align: middle;
+
+    }
+
+</style>
+<body>
+    
+    <div class="screen">window.screen:</div>
+    <div class="outer">window.outer:</div>
+    <div class="inner">window.inner:</div>
+    <div class="documentElement_clientWidth">window.documentElement.clientWidth:</div>
+    
+
+    
+    <script>
+        // screen : 전체화면
+        // outer 브라우저 크기
+        // inner스크롤바 포함 브라우저 크기
+        // documentElement_clientWidth스크롤바 제외한 브라우저 크기        
+        window.onload = function window_size(){
+        const documentElement = document.body
+        
+        let screen = document.querySelector(".screen"); // . 찍고 div 클래스에 있는 screen 인식
+        screen.innerHTML=`window.screen: ${window.screen.width}, ${window.screen.height}`; // [window.screen:] html에서도, script 에서도 해줘야함
+
+        let outer = document.querySelector(".outer");
+        outer.innerHTML=`window.outer: ${window.outerWidth}, ${window.outerHeight}`;
+
+        let inner = document.querySelector(".inner");
+        inner.innerHTML=`window.inner: ${window.innerWidth}, ${window.innerHeight}`;
+
+        let documentElement_clientWidth = document.querySelector(".documentElement_clientWidth");
+        documentElement_clientWidth.innerHTML=`window.documentElement.clientWidth: ${documentElement.clientWidth}, ${documentElement.clientHeight}`;
+        
+
+        window.addEventListener('resize',()=>{
+            let outer_size = document.querySelector(".outer");
+            outer_size.innerHTML = `window.outer: ${window.outerWidth}, ${window.outerHeight}`;
+
+            let inner_size = document.querySelector(".inner");
+            inner_size.innerHTML = `window.inner: ${window.innerWidth}, ${window.innerHeight}`;
+
+            let documentElement_clientWidth_size = document.querySelector(".documentElement_clientWidth");
+            documentElement_clientWidth.innerHTML = `window.documentElement.clientWidth: ${documentElement.clientWidth}, ${documentElement.clientHeight}`;
+
+
+        });
+        
+    };
+        
+    
+    </script>
+
+
+      
+
+
+</body>
+</html>
