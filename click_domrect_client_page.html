@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        overflow: hidden; /*스크롤 내려가는거 방자*/
+    }
+    div{
+        width: 250px;
+        height: 250px;
+        background-color: bisque;
+        margin-bottom: 4px; /*정사각형 간격*/
+        border-radius: 4px; /*정사각형 각 둥글게 만들기*/
+    }
+    .special{ /*div 특정요소 css 가미*/
+        background-color: brown;
+    }
+</style>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="foobar"></div>
+    <div class = "special"></div>
+    <script>
+        const special = document.querySelector(".special"); //div class 선택시 .special // // div id 일 경우 #foobar //
+        special.addEventListener('click',(event)=>{ //event 파리미터 설정해 줘야함
+            const rect = special.getBoundingClientRect();
+            console.log(`rect : ${rect}`); //x : 왼쪽 첫번째 모서리까지 몇 픽셀 떨어져 있다. y : 브라우저부터 첫번째 왼쪽 모서리까지  
+            console.log(`client : ${event.clientX},${event.clientY}`);
+            console.log(`page : ${event.pageX},${event.pageY}`);
+
+        })
+    
+        
+    </script>
+    <div></div>
+</body>
+
+</html>
