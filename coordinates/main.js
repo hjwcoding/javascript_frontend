@@ -1,4 +1,4 @@
-/* 마우스 x,y 좌표 따라다니게 하기*/
+/* 마우스 x,y 좌표 따라다니게 하기!!*/
 
 const horizontal = document.querySelector(".horizontal");
 const vertical = document.querySelector(".vertical");
