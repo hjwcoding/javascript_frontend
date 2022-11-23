@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      body{
+        background-color: black;
+        text-align: center;
+      }
+      .carrot{
+        text-align: center;
+        display: block; /*한줄에 하나씩 나오게 함*/ 
+        margin: auto; /* (간격) 가운데 정렬이 되지 않을 때 이 기능 사용*/
+      }
+      .rabbit{
+        text-align: center; 
+      }
+      .findRabbit{
+        background-color: brown;
+      }
+      .findRabbit{
+        font-size: 32px;
+        margin: 16px 0; /* 위아래 + 양옆 0 */
+        cursor: pointer; /* 마우스 올라가면 손가락 모양 */
+      }
+    </style>
+  </head>
+  <body>
+    <button class="findRabbit">sfindRabbit</button> 
+
+    <div class="rabbit">
+      <img src="img/rabbit.png" alt="사진이 존재하지 않습니다.">
+    </div>
+    <div class="rabbit">
+      <img src="img/rabbit.png" alt="사진이 존재하지 않습니다.">
+    </div>
+    <div class="rabbit">
+      <img src="img/rabbit.png" alt="사진이 존재하지 않습니다.">
+    </div>
+    <div class="rabbit">
+      <img src="img/rabbit.png" alt="사진이 존재하지 않습니다.">
+    </div>
+    <div class="rabbit">
+      <img src="img/rabbit.png" alt="사진이 존재하지 않습니다.">
+    </div>
+    <div class="carrot">
+      <img src="img/carrot.png" alt="사진이 존재하지 않습니다.">
+    </div>
+    <div class="rabbit">
+      <img src="img/rabbit.png" alt="사진이 존재하지 않습니다.">
+    </div>
+    <div class="rabbit">
+      <img src="img/rabbit.png" alt="사진이 존재하지 않습니다.">
+    </div>
+    <div class="rabbit">
+      <img src="img/rabbit.png" alt="사진이 존재하지 않습니다.">
+    </div>
+    <div class="rabbit">
+      <img src="img/rabbit.png" alt="사진이 존재하지 않습니다.">
+    </div>
+    <div class="rabbit">
+      <img src="img/rabbit.png" alt="사진이 존재하지 않습니다.">
+    </div>
+
+    
+    <script>
+      const carrot = document.querySelector(".carrot");
+      const findRabbit = document.querySelector(".findRabbit");
+      findRabbit.addEventListener('click',()=>{
+        carrot.scrollIntoView({behavior : "smooth", block:"center"});
+        });
+    </script>
+  </body>
+</html>

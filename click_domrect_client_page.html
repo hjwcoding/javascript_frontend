@@ -6,59 +6,68 @@
     <title>Document</title>
 </head>
 <style>
-    html,
+
     body{
-        width:100%;
-        height:100%;
+        background-color: black;
+        /*overflow: hidden; 스크롤 내려가는거 방자*/
     }
-    .container{
-        width:100%;
-        height:100%;
-        background-color:black;
+    div{
+        width: 250px;
+        height: 250px;
+        background-color: bisque;
+        margin-bottom: 4px; /*정사각형 간격*/
+        border-radius: 4px; /*정사각형 각 둥글게 만들기*/
     }
-
-    .box1{
-        text-align: left;        
-        width: 20%;
-        height: 20%;
-        position: relative;
-        margin: auto;
-        border: 1px;
-        background-color:yellow;
+    .special{ /*div 특정요소 css 가미*/
+        background-color: brown;
     }
-
-    .box2{       
-        text-align: left;  
-        width: 20%;
-        height: 20%;
-        position: relative;
-        margin: auto;
-        border: 1ch;
-        background-color:yellow;
+    aside{
+        position: fixed;
+        top: 20px;
+        right: 20px;
     }
 
-    .box3{        
-        text-align: left; 
-        width: 20%;
-        height: 20%;
-        position: relative;
-        margin: auto;
-        border: 1ch;
-        background-color:yellow;
-    }
 </style>
 <body>
-    <div class ="container">
-        <div class="box1" ></div>
-        <div class="box2" ></div>
-        <div class="box3" ></div>
+    <aside>
+        <button class="scrollby" style="float : right;">scroll by 100px(y)</button>
+        <button class="scrollto" style="float : right;">scroll to 100px(y)</button>
+        <button class="special_button" style="float : right;">scroll into special</button>
 
-    </div>
+    </aside>        
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- <div id="foobar"></div> -->
+    <div class = "special"></div>
+    <script>
+        const special = document.querySelector(".special"); //div class 선택시 .special // // div id 일 경우 #foobar //
+        special.addEventListener('click',(event)=>{ //event 파리미터 설정해 줘야함
+            const rect = special.getBoundingClientRect();
+            console.log(`rect : ${rect}`); //x : 왼쪽 첫번째 모서리까지 몇 픽셀 떨어져 있다. y : 브라우저부터 첫번째 왼쪽 모서리까지  
+            console.log(`client : ${event.clientX},${event.clientY}`);
+            console.log(`page : ${event.pageX},${event.pageY}`);
+        });
+        const scrollby = document.querySelector(".scrollby");
+        const scrollto = document.querySelector(".scrollto");
+        const special_button = document.querySelector(".special_button");
+
+        scrollby.addEventListener('click',()=>{
+            window.scrollBy({top : 100 , left : 0 , behavior:'smooth'});
+        });
+        scrollto.addEventListener('click',()=>{
+            window.scrollTo(0, 100);
+        });
+        special_button.addEventListener('click',()=>{
+            special.scrollIntoView();
+        });
+
+      
     
+        
+    </script>
+    <div></div>
+
 </body>
-<script>
-    const box = document.querySelector(".tag");
-    box.innerHTML
-    const background = document.querySelector(".container");
-</script>
-</html>
