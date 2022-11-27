@@ -45,27 +45,27 @@
         const documentElement = document.body
         
         let screen = document.querySelector(".screen"); // . 찍고 div 클래스에 있는 screen 인식
-        screen.innerHTML=`window.screen: ${window.screen.width}, ${window.screen.height}`; // [window.screen:] html에서도, script 에서도 해줘야함
+        screen.innerText=`window.screen: ${window.screen.width}, ${window.screen.height}`; // [window.screen:] html에서도, script 에서도 해줘야함
 
         let outer = document.querySelector(".outer");
-        outer.innerHTML=`window.outer: ${window.outerWidth}, ${window.outerHeight}`;
+        outer.innerText=`window.outer: ${window.outerWidth}, ${window.outerHeight}`;
 
         let inner = document.querySelector(".inner");
-        inner.innerHTML=`window.inner: ${window.innerWidth}, ${window.innerHeight}`;
+        inner.innerText=`window.inner: ${window.innerWidth}, ${window.innerHeight}`;
 
         let documentElement_clientWidth = document.querySelector(".documentElement_clientWidth");
-        documentElement_clientWidth.innerHTML=`window.documentElement.clientWidth: ${documentElement.clientWidth}, ${documentElement.clientHeight}`;
+        documentElement_clientWidth.innerText=`window.documentElement.clientWidth: ${documentElement.clientWidth}, ${documentElement.clientHeight}`;
         
 
         window.addEventListener('resize',()=>{
             let outer_size = document.querySelector(".outer");
-            outer_size.innerHTML = `window.outer: ${window.outerWidth}, ${window.outerHeight}`;
+            outer_size.innerText = `window.outer: ${window.outerWidth}, ${window.outerHeight}`;
 
             let inner_size = document.querySelector(".inner");
-            inner_size.innerHTML = `window.inner: ${window.innerWidth}, ${window.innerHeight}`;
+            inner_size.innerText = `window.inner: ${window.innerWidth}, ${window.innerHeight}`;
 
             let documentElement_clientWidth_size = document.querySelector(".documentElement_clientWidth");
-            documentElement_clientWidth.innerHTML = `window.documentElement.clientWidth: ${documentElement.clientWidth}, ${documentElement.clientHeight}`;
+            documentElement_clientWidth.innerText = `window.documentElement.clientWidth: ${documentElement.clientWidth}, ${documentElement.clientHeight}`;
 
 
         });

@@ -45,10 +45,11 @@ button{
     transform: scale(1.1);
 }
 
+
 .item__divider{
     width: 90%;
     height: 1px;
-    background-attachment: lightgrey;
+    background-color: grey;
     margin: auto;
 }
 
@@ -89,7 +90,7 @@ footer{
     border-radius: 50%;
     color: white;
     transition: all 300ms ease-in;
-    a
+    
 }
 
 .footer__button:hover{
